@@ -1,0 +1,32 @@
+management:
+  server:
+    port: 8086
+logging:
+  level:
+    com.freelance.authentication-microservice-jwt: debug
+
+spring:
+  application:
+    name: '@project.artifactId@'
+    version: '@project.version@'
+  datasource:
+    url: jdbc:postgresql://localhost:5434/accounts
+    username: admin
+    password: password
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+      show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+    open-in-view: false
+
+application:
+  security:
+    auth:
+      username: admin
+      password: admin123
+    jwt:
+      secretKey: mJt1fHl2U3VuSldOSHhCZ1R3U1BwOHJHRGpLdlA2SHE9PSQ2aXQ5QVpWUURwSUhp
