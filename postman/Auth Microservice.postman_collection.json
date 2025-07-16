@@ -1,0 +1,120 @@
+{
+	"info": {
+		"_postman_id": "e08be198-56f3-49b6-b0db-0dce53150db6",
+		"name": "Auth Microservice",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "44638464",
+		"_collection_link": "https://jordan-7422117.postman.co/workspace/Jordan's-Workspace~01fdc0e6-c88b-4a1a-8520-53a492b99e0f/collection/44638464-e08be198-56f3-49b6-b0db-0dce53150db6?action=share&source=collection_link&creator=44638464"
+	},
+	"item": [
+		{
+			"name": "Register Request",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\" : \"salchichon\",\r\n    \"password\" : \"salchichon123\",\r\n    \"email\" : \"salchichon@mail.com\",\r\n    \"role\" : \"ADMIN\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login Request",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "xory",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "xory123",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\" : \"xory\",\r\n    \"password\" : \"xory123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Accounts Request",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ4b3J5IiwiaWF0IjoxNzUyNjc5NjUxLCJleHAiOjE3NTI3ODc2NTF9.o5LWGK6TqG_c0NkrcbNBS8IkDbQjFfQrQvrsIsebba9b7TDpHKlCoySXclLd7UP_",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/getAll",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"getAll"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
