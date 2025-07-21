@@ -23,6 +23,7 @@ spring:
       show-sql: true
     properties:
       hibernate:
+        default_schema: atelier
         format_sql: true
     open-in-view: false
 
